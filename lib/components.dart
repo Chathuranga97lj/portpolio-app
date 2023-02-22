@@ -107,7 +107,7 @@ class TextForm extends StatelessWidget {
             //   LengthLimitingTextInputFormatter(100),
             //   FilteringTextInputFormatter.allow(RegExp('[a-z A-Z]'))
             // ],
-            maxLines: maxLine == null?null:maxLine,
+            maxLines: maxLine == null ? null : maxLine,
             decoration: InputDecoration(
               focusedErrorBorder: OutlineInputBorder(
                 borderSide: BorderSide(color: Colors.red),
@@ -123,8 +123,9 @@ class TextForm extends StatelessWidget {
               hintText: hintText,
               hintStyle: GoogleFonts.poppins(fontSize: 14),
             ),
-            validator: (text){
-              if(RegExp("\\bchathuranga\\b", caseSensitive: false).hasMatch(text.toString())){
+            validator: (text) {
+              if (RegExp("\\bchathuranga\\b", caseSensitive: false)
+                  .hasMatch(text.toString())) {
                 return "Match Found";
               }
             },
@@ -132,6 +133,72 @@ class TextForm extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+class AnimationCardWeb extends StatefulWidget {
+  final imagePath;
+  final text;
+  final fit;
+  final reverse;
+  const AnimationCardWeb(
+      {Key? key,
+      @required this.imagePath,
+      @required this.text,
+      this.fit,
+      this.reverse})
+      : super(key: key);
+
+  @override
+  State<AnimationCardWeb> createState() => _AnimationCardWebState();
+}
+
+class _AnimationCardWebState extends State<AnimationCardWeb>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller = AnimationController(
+    vsync: this,
+    duration: const Duration(seconds: 4),
+  )..repeat(reverse: true);
+
+  late Animation<Offset> _animation = Tween(
+    begin: widget.reverse == true ? Offset(0, 0.08) : Offset.zero,
+    end: widget.reverse == true ? Offset.zero : Offset(0, 0.08),
+  ).animate(_controller);
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SlideTransition(position: _animation,
+      child: Card(
+        elevation: 30.0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15.0),
+          side: BorderSide(color: Colors.tealAccent),
+        ),
+        shadowColor: Colors.tealAccent,
+        child: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Image.asset(
+                widget.imagePath,
+                height: 200.0,
+                width: 200.0,
+                fit: widget.fit == null ? null:widget.fit,
+              ),
+              SizedBox(height: 10.0),
+              SansBold(widget.text, 15.0)
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

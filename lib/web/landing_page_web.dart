@@ -254,70 +254,14 @@ class _LandingPageWebState extends State<LandingPageWeb> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Card(
-                    elevation: 30.0,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15.0)),
-                    shadowColor: Colors.tealAccent,
-                    child: Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Image.asset(
-                            "assets/webL.png",
-                            height: 200.0,
-                            width: 200.0,
-                          ),
-                          SizedBox(height: 10.0),
-                          SansBold("Web Development", 15.0)
-                        ],
-                      ),
-                    ),
+                  AnimationCardWeb(imagePath: "assets/webL.png", text: "Web Development",
+                    fit: BoxFit.contain,
+                    reverse: true,
                   ),
-                  Card(
-                    elevation: 30.0,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15.0)),
-                    shadowColor: Colors.tealAccent,
-                    child: Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Image.asset(
-                            "assets/app.png",
-                            height: 200.0,
-                            width: 200.0,
-                            fit: BoxFit.contain,
-                          ),
-                          SizedBox(height: 10.0),
-                          SansBold("Mobile Development", 15.0)
-                        ],
-                      ),
-                    ),
-                  ),
-                  Card(
-                    elevation: 30.0,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15.0)),
-                    shadowColor: Colors.tealAccent,
-                    child: Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Image.asset(
-                            "assets/mongo.jpg",
-                            height: 200.0,
-                            width: 200.0,
-                          ),
-                          SizedBox(height: 10.0),
-                          SansBold("Back-End Development", 15.0)
-                        ],
-                      ),
-                    ),
-                  ),
+                  AnimationCardWeb(imagePath: "assets/app.png", text: "Mobile Development", fit: BoxFit.contain,
+                    reverse: false,),
+                  AnimationCardWeb(imagePath: "assets/mongo.jpg", text: "Back-End Development" , fit: BoxFit.contain,
+                    reverse: true,),
                 ],
               )
             ],
