@@ -37,13 +37,46 @@ class _TabsWebState extends State<TabsWeb> {
                     )
                   ],
                 fontSize: 25.0,
+                fontWeight: FontWeight.bold,
                 color: Colors.transparent,
                 decoration: TextDecoration.underline,
-                decorationThickness: 1,
-                decorationColor: Colors.black)
+                decorationThickness: 2,
+                decorationColor: Colors.tealAccent)
             : GoogleFonts.oswald(color: Colors.black, fontSize: 23.0, fontWeight: FontWeight.bold),
         child: Text(widget.title),
       ),
     );
   }
 }
+
+
+class SansBold extends StatelessWidget {
+  final text;
+  final size;
+  const SansBold(this.text, this.size, {Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: GoogleFonts.openSans(
+          fontSize: size, fontWeight: FontWeight.bold),
+    );
+  }
+}
+
+class Sans extends StatelessWidget {
+  final text;
+  final size;
+  const Sans(this.text, this.size, {Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: GoogleFonts.openSans(
+          fontSize: size),
+    );
+  }
+}
+
