@@ -13,6 +13,7 @@ class _LandingPageWebState extends State<LandingPageWeb> {
   @override
   Widget build(BuildContext context) {
     var heightDevice = MediaQuery.of(context).size.height;
+    var widthDevice = MediaQuery.of(context).size.width;
     return Scaffold(
       drawer: Drawer(),
       backgroundColor: Colors.white,
@@ -122,12 +123,15 @@ class _LandingPageWebState extends State<LandingPageWeb> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image.asset("assets/web.jpg", height: heightDevice/1.7,),
+              Image.asset(
+                "assets/web.jpg",
+                height: heightDevice / 1.7,
+              ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SansBold("About me", 40),
+                  SansBold("About Me", 40),
                   SizedBox(
                     height: 15.0,
                   ),
@@ -148,91 +152,89 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                     children: [
                       Container(
                         decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.tealAccent,
-                            style: BorderStyle.solid,
-                            width: 2.0
-                          ),
-                          borderRadius: BorderRadius.circular(5.0)
-                        ),
+                            border: Border.all(
+                                color: Colors.tealAccent,
+                                style: BorderStyle.solid,
+                                width: 2.0),
+                            borderRadius: BorderRadius.circular(5.0)),
                         padding: EdgeInsets.all(7.0),
                         child: Sans("Flutter", 15.0),
                       ),
-                      SizedBox(width: 7.0,),
+                      SizedBox(
+                        width: 7.0,
+                      ),
                       Container(
                         decoration: BoxDecoration(
                             border: Border.all(
                                 color: Colors.tealAccent,
                                 style: BorderStyle.solid,
-                                width: 2.0
-                            ),
-                            borderRadius: BorderRadius.circular(5.0)
-                        ),
+                                width: 2.0),
+                            borderRadius: BorderRadius.circular(5.0)),
                         padding: EdgeInsets.all(7.0),
                         child: Sans("React", 15.0),
                       ),
-                      SizedBox(width: 7.0,),
+                      SizedBox(
+                        width: 7.0,
+                      ),
                       Container(
                         decoration: BoxDecoration(
                             border: Border.all(
                                 color: Colors.tealAccent,
                                 style: BorderStyle.solid,
-                                width: 2.0
-                            ),
-                            borderRadius: BorderRadius.circular(5.0)
-                        ),
+                                width: 2.0),
+                            borderRadius: BorderRadius.circular(5.0)),
                         padding: EdgeInsets.all(7.0),
                         child: Sans("React-Native", 15.0),
                       ),
-                      SizedBox(width: 7.0,),
+                      SizedBox(
+                        width: 7.0,
+                      ),
                       Container(
                         decoration: BoxDecoration(
                             border: Border.all(
                                 color: Colors.tealAccent,
                                 style: BorderStyle.solid,
-                                width: 2.0
-                            ),
-                            borderRadius: BorderRadius.circular(5.0)
-                        ),
+                                width: 2.0),
+                            borderRadius: BorderRadius.circular(5.0)),
                         padding: EdgeInsets.all(7.0),
                         child: Sans("MongoDB", 15.0),
                       ),
-                      SizedBox(width: 7.0,),
+                      SizedBox(
+                        width: 7.0,
+                      ),
                       Container(
                         decoration: BoxDecoration(
                             border: Border.all(
                                 color: Colors.tealAccent,
                                 style: BorderStyle.solid,
-                                width: 2.0
-                            ),
-                            borderRadius: BorderRadius.circular(5.0)
-                        ),
+                                width: 2.0),
+                            borderRadius: BorderRadius.circular(5.0)),
                         padding: EdgeInsets.all(7.0),
                         child: Sans("MySQL", 15.0),
                       ),
-                      SizedBox(width: 7.0,),
+                      SizedBox(
+                        width: 7.0,
+                      ),
                       Container(
                         decoration: BoxDecoration(
                             border: Border.all(
                                 color: Colors.tealAccent,
                                 style: BorderStyle.solid,
-                                width: 2.0
-                            ),
-                            borderRadius: BorderRadius.circular(5.0)
-                        ),
+                                width: 2.0),
+                            borderRadius: BorderRadius.circular(5.0)),
                         padding: EdgeInsets.all(7.0),
                         child: Sans("Python", 15.0),
                       ),
-                      SizedBox(width: 7.0,),
+                      SizedBox(
+                        width: 7.0,
+                      ),
                       Container(
                         decoration: BoxDecoration(
                             border: Border.all(
                                 color: Colors.tealAccent,
                                 style: BorderStyle.solid,
-                                width: 2.0
-                            ),
-                            borderRadius: BorderRadius.circular(5.0)
-                        ),
+                                width: 2.0),
+                            borderRadius: BorderRadius.circular(5.0)),
                         padding: EdgeInsets.all(7.0),
                         child: Sans("Java", 15.0),
                       ),
@@ -245,28 +247,28 @@ class _LandingPageWebState extends State<LandingPageWeb> {
         ),
         // Third Section
         Container(
-          height: heightDevice/1.3,
+          height: heightDevice / 1.3,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              SansBold("What I do ?", 40),
+              SansBold("What I Do ?", 40),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Card(
                     elevation: 30,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15.0)
-                    ),
+                        borderRadius: BorderRadius.circular(15.0)),
                     shadowColor: Colors.tealAccent,
                     child: Padding(
                       padding: const EdgeInsets.all(15.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Image.asset("assets/webL.png",
-                          height: 200,
-                          width: 200,
+                          Image.asset(
+                            "assets/webL.png",
+                            height: 200,
+                            width: 200,
                           ),
                           SizedBox(height: 10),
                           SansBold("Web Development", 15.0)
@@ -277,15 +279,15 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                   Card(
                     elevation: 30,
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15.0)
-                    ),
+                        borderRadius: BorderRadius.circular(15.0)),
                     shadowColor: Colors.tealAccent,
                     child: Padding(
                       padding: const EdgeInsets.all(15.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Image.asset("assets/app.png",
+                          Image.asset(
+                            "assets/app.png",
                             height: 200,
                             width: 200,
                             fit: BoxFit.contain,
@@ -299,15 +301,15 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                   Card(
                     elevation: 30,
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15.0)
-                    ),
+                        borderRadius: BorderRadius.circular(15.0)),
                     shadowColor: Colors.tealAccent,
                     child: Padding(
                       padding: const EdgeInsets.all(15.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Image.asset("assets/mongo.jpg",
+                          Image.asset(
+                            "assets/mongo.jpg",
                             height: 200,
                             width: 200,
                           ),
@@ -319,6 +321,56 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                   ),
                 ],
               )
+            ],
+          ),
+        ),
+        // Forth section
+        Container(
+          height: heightDevice,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              SansBold("Contact Me", 40),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Column(
+                    children: [
+                      TextForm(
+                          heading: "First Name",
+                          width: 350,
+                          hintText: "Please type your first name",
+                          maxLine: 1),
+                      SizedBox(height: 15),
+                      TextForm(
+                          heading: "Email",
+                          width: 350,
+                          hintText: "Please enter your email address",
+                          maxLine: 1)
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      TextForm(
+                          heading: "Last Name",
+                          width: 350,
+                          hintText: "Please enter your last name",
+                          maxLine: 1),
+                      SizedBox(height: 15.0),
+                      TextForm(
+                          heading: "Phone Number",
+                          width: 350,
+                          hintText: "Please enter your phone no",
+                          maxLine: 1)
+                    ],
+                  )
+                ],
+              ),
+              TextForm(
+                  heading: "Message",
+                  width: widthDevice / 1.5,
+                  hintText: "Please enter your message",
+                  maxLine: 10)
             ],
           ),
         )

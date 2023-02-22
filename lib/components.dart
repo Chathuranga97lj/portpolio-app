@@ -42,13 +42,15 @@ class _TabsWebState extends State<TabsWeb> {
                 decoration: TextDecoration.underline,
                 decorationThickness: 2,
                 decorationColor: Colors.tealAccent)
-            : GoogleFonts.oswald(color: Colors.black, fontSize: 23.0, fontWeight: FontWeight.bold),
+            : GoogleFonts.oswald(
+                color: Colors.black,
+                fontSize: 23.0,
+                fontWeight: FontWeight.bold),
         child: Text(widget.title),
       ),
     );
   }
 }
-
 
 class SansBold extends StatelessWidget {
   final text;
@@ -59,8 +61,7 @@ class SansBold extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: GoogleFonts.openSans(
-          fontSize: size, fontWeight: FontWeight.bold),
+      style: GoogleFonts.openSans(fontSize: size, fontWeight: FontWeight.bold),
     );
   }
 }
@@ -74,9 +75,49 @@ class Sans extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: GoogleFonts.openSans(
-          fontSize: size),
+      style: GoogleFonts.openSans(fontSize: size),
     );
   }
 }
 
+class TextForm extends StatelessWidget {
+  final heading;
+  final width;
+  final hintText;
+  final maxLine;
+  const TextForm(
+      {Key? key,
+      @required this.heading,
+      @required this.width,
+      @required this.hintText,
+      @required this.maxLine})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Sans(heading, 16.0),
+        SizedBox(height: 5.0),
+        SizedBox(
+          width: width,
+          child: TextFormField(
+            maxLines: maxLine == null?null:maxLine,
+            decoration: InputDecoration(
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.teal),
+                borderRadius: BorderRadius.all(Radius.circular(10.0)),
+              ),
+              focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.tealAccent, width: 2),
+                  borderRadius: BorderRadius.all(Radius.circular(15.0))),
+              hintText: hintText,
+              hintStyle: GoogleFonts.poppins(fontSize: 14),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
