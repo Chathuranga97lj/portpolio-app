@@ -242,6 +242,85 @@ class _LandingPageWebState extends State<LandingPageWeb> {
               ),
             ],
           ),
+        ),
+        // Third Section
+        Container(
+          height: heightDevice/1.3,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              SansBold("What I do ?", 40),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Card(
+                    elevation: 30,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0)
+                    ),
+                    shadowColor: Colors.tealAccent,
+                    child: Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset("assets/webL.png",
+                          height: 200,
+                          width: 200,
+                          ),
+                          SizedBox(height: 10),
+                          SansBold("Web Development", 15.0)
+                        ],
+                      ),
+                    ),
+                  ),
+                  Card(
+                    elevation: 30,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15.0)
+                    ),
+                    shadowColor: Colors.tealAccent,
+                    child: Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset("assets/app.png",
+                            height: 200,
+                            width: 200,
+                            fit: BoxFit.contain,
+                          ),
+                          SizedBox(height: 10),
+                          SansBold("Mobile Development", 15.0)
+                        ],
+                      ),
+                    ),
+                  ),
+                  Card(
+                    elevation: 30,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15.0)
+                    ),
+                    shadowColor: Colors.tealAccent,
+                    child: Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset("assets/mongo.jpg",
+                            height: 200,
+                            width: 200,
+                          ),
+                          SizedBox(height: 10),
+                          SansBold("Back-End Development", 15.0)
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
         )
       ]),
     );
