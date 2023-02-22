@@ -103,18 +103,32 @@ class TextForm extends StatelessWidget {
         SizedBox(
           width: width,
           child: TextFormField(
+            // inputFormatters: [
+            //   LengthLimitingTextInputFormatter(100),
+            //   FilteringTextInputFormatter.allow(RegExp('[a-z A-Z]'))
+            // ],
             maxLines: maxLine == null?null:maxLine,
             decoration: InputDecoration(
+              focusedErrorBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.red),
+                borderRadius: BorderRadius.all(Radius.circular(10.0)),
+              ),
               enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(color: Colors.teal),
                 borderRadius: BorderRadius.all(Radius.circular(10.0)),
               ),
               focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.tealAccent, width: 2),
+                  borderSide: BorderSide(color: Colors.tealAccent, width: 2.0),
                   borderRadius: BorderRadius.all(Radius.circular(15.0))),
               hintText: hintText,
               hintStyle: GoogleFonts.poppins(fontSize: 14),
             ),
+            validator: (text){
+              if(RegExp("\\bchathuranga\\b", caseSensitive: false).hasMatch(text.toString())){
+                return "Match Found";
+              }
+            },
+            autovalidateMode: AutovalidateMode.onUserInteraction,
           ),
         ),
       ],

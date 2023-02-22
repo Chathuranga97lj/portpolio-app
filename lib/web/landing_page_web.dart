@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/components.dart';
 
 class LandingPageWeb extends StatefulWidget {
@@ -60,7 +59,7 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                         )),
                     padding:
                         EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                    child: SansBold("Hello I'm", 15),
+                    child: SansBold("Hello I'm", 15.0),
                   ),
                   SizedBox(
                     height: 15.0,
@@ -131,21 +130,21 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SansBold("About Me", 40),
+                  SansBold("About Me", 40.0),
                   SizedBox(
                     height: 15.0,
                   ),
                   Sans(
                       "Hello! I'm Chathuranga Lakmal I specialize in Mobile and Web Development",
-                      15),
+                      15.0),
                   Sans(
                       "I am a hardworking and ambitious individual with a great passion for Information Technology ",
-                      15),
+                      15.0),
                   Sans(
                       "I am currently working at Efito Solutions as a trainee Software Engineer",
-                      15),
+                      15.0),
                   SizedBox(
-                    height: 10,
+                    height: 10.0,
                   ),
                   Row(
                     // Skills
@@ -251,12 +250,12 @@ class _LandingPageWebState extends State<LandingPageWeb> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              SansBold("What I Do ?", 40),
+              SansBold("What I Do ?", 40.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Card(
-                    elevation: 30,
+                    elevation: 30.0,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15.0)),
                     shadowColor: Colors.tealAccent,
@@ -267,17 +266,17 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                         children: [
                           Image.asset(
                             "assets/webL.png",
-                            height: 200,
-                            width: 200,
+                            height: 200.0,
+                            width: 200.0,
                           ),
-                          SizedBox(height: 10),
+                          SizedBox(height: 10.0),
                           SansBold("Web Development", 15.0)
                         ],
                       ),
                     ),
                   ),
                   Card(
-                    elevation: 30,
+                    elevation: 30.0,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15.0)),
                     shadowColor: Colors.tealAccent,
@@ -288,18 +287,18 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                         children: [
                           Image.asset(
                             "assets/app.png",
-                            height: 200,
-                            width: 200,
+                            height: 200.0,
+                            width: 200.0,
                             fit: BoxFit.contain,
                           ),
-                          SizedBox(height: 10),
+                          SizedBox(height: 10.0),
                           SansBold("Mobile Development", 15.0)
                         ],
                       ),
                     ),
                   ),
                   Card(
-                    elevation: 30,
+                    elevation: 30.0,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15.0)),
                     shadowColor: Colors.tealAccent,
@@ -310,10 +309,10 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                         children: [
                           Image.asset(
                             "assets/mongo.jpg",
-                            height: 200,
-                            width: 200,
+                            height: 200.0,
+                            width: 200.0,
                           ),
-                          SizedBox(height: 10),
+                          SizedBox(height: 10.0),
                           SansBold("Back-End Development", 15.0)
                         ],
                       ),
@@ -330,7 +329,7 @@ class _LandingPageWebState extends State<LandingPageWeb> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              SansBold("Contact Me", 40),
+              SansBold("Contact Me", 40.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -338,13 +337,13 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                     children: [
                       TextForm(
                           heading: "First Name",
-                          width: 350,
+                          width: 350.0,
                           hintText: "Please type your first name",
                           maxLine: 1),
-                      SizedBox(height: 15),
+                      SizedBox(height: 15.0),
                       TextForm(
                           heading: "Email",
-                          width: 350,
+                          width: 350.0,
                           hintText: "Please enter your email address",
                           maxLine: 1)
                     ],
@@ -353,13 +352,13 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                     children: [
                       TextForm(
                           heading: "Last Name",
-                          width: 350,
+                          width: 350.0,
                           hintText: "Please enter your last name",
                           maxLine: 1),
                       SizedBox(height: 15.0),
                       TextForm(
                           heading: "Phone Number",
-                          width: 350,
+                          width: 350.0,
                           hintText: "Please enter your phone no",
                           maxLine: 1)
                     ],
@@ -370,10 +369,23 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                   heading: "Message",
                   width: widthDevice / 1.5,
                   hintText: "Please enter your message",
-                  maxLine: 10)
+                  maxLine: 10
+              ),
+              MaterialButton(
+                  elevation: 20.0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0)
+                  ),
+                  height: 60.0,
+                  minWidth: 200.0,
+                  color: Colors.tealAccent,
+                  child: SansBold("Submit", 20.0),
+                  onPressed: (){}
+              )
             ],
           ),
-        )
+        ),
+        SizedBox(height: 20.0),
       ]),
     );
   }
