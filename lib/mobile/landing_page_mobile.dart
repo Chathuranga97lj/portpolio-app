@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/components.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -19,10 +20,25 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
     );
   }
 
+  tealContainer(String text) {
+    return Container(
+      decoration: BoxDecoration(
+          border: Border.all(
+              color: Colors.tealAccent, style: BorderStyle.solid, width: 2.0),
+          borderRadius: BorderRadius.circular(5.0)),
+      padding: EdgeInsets.all(7.0),
+      child: Text(
+        text,
+        style: GoogleFonts.openSans(fontSize: 15.0),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     var widthDevice = MediaQuery.of(context).size.width;
     return Scaffold(
+      extendBodyBehindAppBar: true,
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -65,8 +81,8 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
         ),
       ),
       body: ListView(
-        // Intro, First Section
         children: [
+          // Intro, First Section
           Padding(
             padding: const EdgeInsets.only(left: 20.0),
             child: Column(
@@ -130,6 +146,48 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
             ),
           ),
           SizedBox(height: 90.0),
+          // About me, Second Section
+
+          Padding(
+            padding: EdgeInsets.only(left: 20.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SansBold("About Me", 35.0),
+                Sans(
+                    "Hello! I'm Chathuranga Lakmal I specialize in Mobile and Web Development",
+                    15.0),
+                Sans(
+                    "I am a hardworking and ambitious individual with a great passion for Information Technology ",
+                    15.0),
+                Sans(
+                    "I am currently working at Efito Solutions as a trainee Software Engineer",
+                    15.0),
+                SizedBox(height: 10.0),
+                Wrap(
+                  spacing: 7.0,
+                  runSpacing: 7.0,
+                  children: [
+                    tealContainer("Flutter"),
+                    tealContainer("React"),
+                    tealContainer("React-Native"),
+                    tealContainer("MySQL"),
+                    tealContainer("MongoDB"),
+                    tealContainer("Python"),
+                    tealContainer("Java"),
+                    tealContainer("Node.js")
+                  ],
+                )
+              ],
+            ),
+          ),
+          SizedBox(height: 60.0),
+          // Third Section
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [SansBold("What I Do?", 35.0)],
+          )
         ],
       ),
     );
