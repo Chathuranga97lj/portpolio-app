@@ -59,7 +59,7 @@ class _ContactWebState extends State<ContactWeb> {
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
             SliverAppBar(
-              expandedHeight: 500.0,
+              expandedHeight: 800.0,
               backgroundColor: Colors.white,
               iconTheme: IconThemeData(
                 size: 25.0,
@@ -83,12 +83,87 @@ class _ContactWebState extends State<ContactWeb> {
                   Spacer(),
                   TabsWeb(title: "About", route: "/about"),
                   Spacer(),
+                  TabsWeb(title: "Contact", route: "/contact"),
+                  Spacer()
                 ],
               ),
             )
           ];
         },
-        body: SingleChildScrollView(),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(height: 30.0),
+              SansBold("Contact Me", 40.0),
+              SizedBox(height: 20.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Column(
+                    children: [
+                      TextForm(
+                          heading: "First Name",
+                          width: 350.0,
+                          hintText: "Please enter first name",
+                          maxLine: 1),
+                      SizedBox(height: 15.0),
+                      TextForm(
+                          heading: "Email",
+                          width: 350.0,
+                          hintText: "Please enter email address",
+                          maxLine: 1),
+                      SizedBox(
+                        height: 15.0,
+                      )
+                    ],
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      TextForm(
+                          heading: "Last Name",
+                          width: 350.0,
+                          hintText: "Please enter last name",
+                          maxLine: 1),
+                      SizedBox(
+                        height: 15.0,
+                      ),
+                      TextForm(
+                          heading: "Telephone Number",
+                          width: 350.0,
+                          hintText: "Please enter telephone no",
+                          maxLine: 1),
+                    ],
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              TextForm(
+                  heading: "Message",
+                  width: widthDevice / 1.5,
+                  hintText: "Enter your message",
+                  maxLine: 5),
+              SizedBox(
+                height: 20.0,
+              ),
+              MaterialButton(
+                onPressed: () {},
+                elevation: 20.0,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0)),
+                height: 60.0,
+                minWidth: 200.0,
+                color: Colors.tealAccent,
+                child: SansBold("Submit", 20.0),
+              ),
+              SizedBox(
+                height: 10.0,
+              )
+            ],
+          ),
+        ),
       ),
     );
   }
