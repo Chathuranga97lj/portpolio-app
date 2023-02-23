@@ -44,7 +44,7 @@ class _TabsWebState extends State<TabsWeb> {
                 decorationColor: Colors.tealAccent)
             : GoogleFonts.oswald(
                 color: Colors.black,
-                fontSize: 23.0,
+                fontSize: 20.0,
                 fontWeight: FontWeight.bold),
         child: Text(widget.title),
       ),

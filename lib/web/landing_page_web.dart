@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/components.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class LandingPageWeb extends StatefulWidget {
   const LandingPageWeb({Key? key}) : super(key: key);
@@ -9,12 +10,46 @@ class LandingPageWeb extends StatefulWidget {
 }
 
 class _LandingPageWebState extends State<LandingPageWeb> {
+
+  urlLauncher(String imgPath, String  url){
+    return IconButton(icon: Image.asset(imgPath, width: 35.0),
+      onPressed: () async {
+        await launchUrl(Uri.parse(url));
+      },);
+  }
   @override
   Widget build(BuildContext context) {
     var heightDevice = MediaQuery.of(context).size.height;
     var widthDevice = MediaQuery.of(context).size.width;
     return Scaffold(
-      drawer: Drawer(),
+      drawer: Drawer(
+        backgroundColor: Colors.white,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CircleAvatar(
+              radius: 72.0,
+              backgroundColor: Colors.tealAccent,
+              child: CircleAvatar(
+                radius: 70.0,
+                backgroundColor: Colors.white,
+                backgroundImage: AssetImage("assets/profile.jpg"),
+              ),
+            ),
+            SizedBox(height: 15.0),
+            SansBold("Chathuranga", 30.0),
+            SizedBox(height: 15.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                urlLauncher("assets/linkedin.png", "https://www.linkedin.com/in/chathuranga97/"),
+                urlLauncher("assets/twitter.png", "https://twitter.com/chathu97lj"),
+                urlLauncher("assets/github.png", "https://github.com/Chathuranga97lj")
+              ],
+            )
+          ],
+        ),
+      ),
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -124,7 +159,7 @@ class _LandingPageWebState extends State<LandingPageWeb> {
             children: [
               Image.asset(
                 "assets/web.jpg",
-                height: heightDevice / 1.7,
+                height: widthDevice / 1.9,
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
