@@ -10,13 +10,15 @@ class LandingPageWeb extends StatefulWidget {
 }
 
 class _LandingPageWebState extends State<LandingPageWeb> {
-
-  urlLauncher(String imgPath, String  url){
-    return IconButton(icon: Image.asset(imgPath, width: 35.0),
+  urlLauncher(String imgPath, String url) {
+    return IconButton(
+      icon: Image.asset(imgPath, width: 35.0),
       onPressed: () async {
         await launchUrl(Uri.parse(url));
-      },);
+      },
+    );
   }
+
   @override
   Widget build(BuildContext context) {
     var heightDevice = MediaQuery.of(context).size.height;
@@ -42,9 +44,12 @@ class _LandingPageWebState extends State<LandingPageWeb> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                urlLauncher("assets/linkedin.png", "https://www.linkedin.com/in/chathuranga97/"),
-                urlLauncher("assets/twitter.png", "https://twitter.com/chathu97lj"),
-                urlLauncher("assets/github.png", "https://github.com/Chathuranga97lj")
+                urlLauncher("assets/linkedin.png",
+                    "https://www.linkedin.com/in/chathuranga97/"),
+                urlLauncher(
+                    "assets/twitter.png", "https://twitter.com/chathu97lj"),
+                urlLauncher(
+                    "assets/github.png", "https://github.com/Chathuranga97lj")
               ],
             )
           ],
@@ -60,15 +65,30 @@ class _LandingPageWebState extends State<LandingPageWeb> {
             Spacer(
               flex: 3,
             ),
-            TabsWeb("Home"),
+            TabsWeb(
+              title: "Home",
+              route: '/',
+            ),
             Spacer(),
-            TabsWeb("Works"),
+            TabsWeb(
+              title: "Works",
+              route: '/works',
+            ),
             Spacer(),
-            TabsWeb("Blog"),
+            TabsWeb(
+              title: "Blog",
+              route: '/blog',
+            ),
             Spacer(),
-            TabsWeb("About"),
+            TabsWeb(
+              title: "About",
+              route: '/about',
+            ),
             Spacer(),
-            TabsWeb("Contact"),
+            TabsWeb(
+              title: "Contact",
+              route: '/contact',
+            ),
             Spacer(),
           ],
         ),
@@ -289,14 +309,24 @@ class _LandingPageWebState extends State<LandingPageWeb> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  AnimationCardWeb(imagePath: "assets/webL.png", text: "Web Development",
+                  AnimationCardWeb(
+                    imagePath: "assets/webL.png",
+                    text: "Web Development",
                     fit: BoxFit.contain,
                     reverse: true,
                   ),
-                  AnimationCardWeb(imagePath: "assets/app.png", text: "Mobile Development", fit: BoxFit.contain,
-                    reverse: false,),
-                  AnimationCardWeb(imagePath: "assets/mongo.jpg", text: "Back-End Development" , fit: BoxFit.contain,
-                    reverse: true,),
+                  AnimationCardWeb(
+                    imagePath: "assets/app.png",
+                    text: "Mobile Development",
+                    fit: BoxFit.contain,
+                    reverse: false,
+                  ),
+                  AnimationCardWeb(
+                    imagePath: "assets/mongo.jpg",
+                    text: "Back-End Development",
+                    fit: BoxFit.contain,
+                    reverse: true,
+                  ),
                 ],
               )
             ],
@@ -348,19 +378,16 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                   heading: "Message",
                   width: widthDevice / 1.5,
                   hintText: "Please enter your message",
-                  maxLine: 10
-              ),
+                  maxLine: 10),
               MaterialButton(
                   elevation: 20.0,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)
-                  ),
+                      borderRadius: BorderRadius.circular(10.0)),
                   height: 60.0,
                   minWidth: 200.0,
                   color: Colors.tealAccent,
                   child: SansBold("Submit", 20.0),
-                  onPressed: (){}
-              )
+                  onPressed: () {})
             ],
           ),
         ),

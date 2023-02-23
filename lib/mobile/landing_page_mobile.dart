@@ -186,7 +186,79 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
           // Third Section
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: [SansBold("What I Do?", 35.0)],
+            children: [
+              SansBold("What I Do?", 35.0),
+              AnimationCardWeb(
+                imagePath: "assets/webL.png",
+                text: "Web Development",
+                width: 300.0,
+                // fit: BoxFit.contain,
+                // reverse: true,
+              ),
+              SizedBox(height: 35.0),
+              AnimationCardWeb(
+                imagePath: "assets/app.png",
+                text: "Mobile Development",
+                width: 300.0,
+                // fit: BoxFit.contain,
+                reverse: true,
+              ),
+              SizedBox(height: 35.0),
+              AnimationCardWeb(
+                imagePath: "assets/mongo.jpg",
+                text: "Back-End Development",
+                width: 300.0,
+                // fit: BoxFit.contain,
+                // reverse: true,
+              ),
+              SizedBox(height: 60.0),
+
+              // Contact Forth section
+              Wrap(
+                runSpacing: 20.0,
+                spacing: 20.0,
+                alignment: WrapAlignment.center,
+                children: [
+                  SansBold("Contact Me", 35.0),
+                  TextForm(
+                      heading: "First Name",
+                      width: widthDevice / 1.4,
+                      hintText: "Please type first name",
+                      maxLine: 1),
+                  TextForm(
+                      heading: "Last Name",
+                      width: widthDevice / 1.4,
+                      hintText: "Please enter your last name",
+                      maxLine: 1),
+                  TextForm(
+                      heading: "Email",
+                      width: widthDevice / 1.4,
+                      hintText: "Please enter your email",
+                      maxLine: 1),
+                  TextForm(
+                      heading: "Phone Number",
+                      width: widthDevice / 1.4,
+                      hintText: "Please enter your phone no",
+                      maxLine: 1),
+                  TextForm(
+                      heading: "Message",
+                      width: widthDevice / 1.4,
+                      hintText: "Type message",
+                      maxLine: 3),
+                  MaterialButton(
+                    onPressed: () {},
+                    elevation: 20.0,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0)),
+                    height: 60.0,
+                    minWidth: widthDevice / 2.2,
+                    color: Colors.tealAccent,
+                    child: SansBold("Submit", 20.0),
+                  ),
+                ],
+              ),
+              SizedBox(height: 20.0)
+            ],
           )
         ],
       ),
